@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/img/fav.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <div id="titulo"><h1>Hola soy Juan Artigas</h1>
+    <h3>Desarrollador apasionado por la programación y el diseño, con mente creativa.</h3>
+    </div>
+    <div id="descargacv">
+    <a href="#"><img src="../static/img/curriculum-vitae.png" alt="Descarga CV">
+        <br> Descarga CV</a>
+    </div>
+    </header>
+    <main>
+        <div class="menu">
+
+            <div id="menuLinks">
+                <a href="../index.html">Perfil / Inicio</a>
+                <a href="./certificados.html">Titulos/Certificados</a>
+                <a href="./contacto.html">Contracto/Redes</a>
+            </div>
+
+
+            <div class="tarjetas">
+
+                <div class="tarjeta1">
+                <p class="title">Codo a Codo</p>
+                    <div class="tarjeta">
+                        <span>CAC - Codo a Codo
+
+                            Codo a codo propuesta que llevan a cabo de manera conjunta el Ministerio de Educación y el Ministerio de Modernización de la Ciudad de Buenos Aires.
+                            <br>
+                            Frontend, Backend, Bases de Datos, Git y GitHub, Metodologías Ágiles, Habilidades Blandas, Python.
+                        </span>
+                        <img src="../static/img/codoacodo.png" alt="CAC">
+                        <br>
+                        <button class="seleccion"  data-info="<div class='centro'><img src='../static/img/codoacodo.png' alt='CAC'><div class='descripcion'>descripcion proyecto</div><a class='seleccion' href='../static/data/CodoACodoInicial.pdf'  target='_blank'>Codigo</a><br>
+                        <a class='seleccion' href='../static/data/CodoACodoFullStackPython.pdf'  target='_blank'>Proyecto</a></div>" 
+                        data-img="#"> VER </button>
+                    </div>
+                </div>
+
+        
+        </div>
+        </div>
+         <div id="infoBox" tabindex="-1">
+        <button id="hideBtn">X</button>
+        <div id="contTitulo">
+        <img id="infoImg" alt="" /><p class="hidden" id="infoTitle"></p>
+        </div>
+        <div id="infoText" class="imgcent"></div>
+        <br>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Juan Antonio Artigas.</p>
+        <p>Mi objetivo es fusionar la lógica del código con la estética visual para crear experiencias digitales impactantes.</p>
+    </footer>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

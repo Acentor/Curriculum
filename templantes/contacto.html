@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/img/fav.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+    emailjs.init('cvRCRMpW83xirZkDO')
+    </script>
+</head>
+<body>
+    <header>
+    <div id="titulo"><h1>Hola soy Juan Artigas</h1>
+    <h3>Desarrollador apasionado por la programación y el diseño, con mente creativa.</h3>
+    </div>
+    <div id="descargacv">
+    <a href="#"><img src="../static/img/curriculum-vitae.png" alt="Descarga CV">
+        <br> Descarga CV</a>
+    </div>
+    </header>
+    <main>
+        <div class="menu">
+
+            <div id="menuLinks">
+                <a href="../index.html">Perfil / Inicio</a>
+            </div>
+                <form id="form">
+                <div class="field">
+                    <label for="title">title</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="field">
+                    <label for="name">name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="field">
+                    <label for="message">message</label>
+                    <textarea type="text" name="message" id="message" rows="4" cols="33"></textarea>
+                </div>
+                <div class="field">
+                    <label for="email">email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+
+                <input type="submit" id="button" value="Send Email" >
+                </form>
+            </div>
+
+    </main>
+    <footer>
+        <p>&copy; Juan Antonio Artigas.</p>
+        <p>Mi objetivo es fusionar la lógica del código con la estética visual para crear experiencias digitales impactantes.</p>
+    </footer>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
