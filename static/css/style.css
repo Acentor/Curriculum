@@ -201,7 +201,16 @@ hr {
   margin-bottom: 15px;
 }
 
-#menuLinks a {
+.imgRedes {
+  max-width: 160px;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: transform 0.5s ease;
+  display: inline-block;
+}
+
+.amenu {
   text-decoration: none;
   color: whitesmoke;
   background: url(../img/abstractgradientdark.jpg);
@@ -589,9 +598,9 @@ input[type="submit"]:active {
         font-size: large;
     }
 
-.campos input , textarea {
-width: 20vw;
-  max-width: 300px;
+    .campos input , textarea {
+    width: 20vw;
+      max-width: 300px;
     }
     
     #skill {

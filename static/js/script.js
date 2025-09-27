@@ -57,16 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!validateForm()) {
                 return;
             }
-            btn.value = "Sending...";
+            btn.value = "Enviando...";
 
             const serviceID = "default_service";
             const templateID = "template_jfpjh7b";
 
             emailjs.sendForm(serviceID, templateID, this).then(
                 () => {
-                    btn.value = "Send Email";
+                    btn.value = "Enviar Mensaje";
                     Swal.fire({
-                    title: "Mensaje Enviado",
+                    title: "Mensaje Enviado, Gracias por su Contacto",
                     icon: "success",
                     }).then((result) => {
                     if (result.isConfirmed) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 },
                 (err) => {
-                    btn.value = "Send Email";
+                    btn.value = "Enviar Mensaje";
                     Swal.fire({
                     icon: "error",
                     title: "Oops...",
