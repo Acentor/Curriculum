@@ -32,28 +32,31 @@
             <div id="menuLinks">
                 <a href="../index.html">Perfil / Inicio</a>
             </div>
-                <form id="form">
-                <div class="field">
-                    <label for="title">title</label>
-                    <input type="text" name="title" id="title">
-                </div>
-                <div class="field">
-                    <label for="name">name</label>
-                    <input type="text" name="name" id="name">
-                </div>
-                <div class="field">
-                    <label for="message">message</label>
-                    <textarea type="text" name="message" id="message" rows="4" cols="33"></textarea>
-                </div>
-                <div class="field">
-                    <label for="email">email</label>
-                    <input type="text" name="email" id="email">
-                </div>
+            <br>
 
+            <section class="profile-section">
+                <form id="form">
+                <div class="campos">
+                    <label for="title">title</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="campos">
+                    <label for="name">name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="campos">
+                    <label for="message">message</label>
+                    <textarea type="text" name="message" id="message" rows="5"></textarea>
+                </div>
+                <div class="campos">
+                    <label for="email">email</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <br>
                 <input type="submit" id="button" value="Send Email" >
                 </form>
+            </section>
             </div>
-
     </main>
     <footer>
         <p>&copy; Juan Antonio Artigas.</p>

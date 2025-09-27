@@ -55,12 +55,14 @@ header h3 {
 }
 
 a:focus,
-button:focus {
-    outline: 6px solid var(--space-cadet-2);
+button:focus, input:focus , textarea:focus {
+    outline: 5px solid var(--space-cadet-2);
+    outline-offset: 2px;
+    border-radius: 3px;
 }
 
 main {
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 12%;
   padding-right: 12%;
 }
@@ -72,6 +74,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-bottom: 50px;
   align-items: center;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -194,8 +197,8 @@ hr {
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
 
 #menuLinks a {
@@ -435,6 +438,60 @@ footer {
   justify-content: center;
 }
 
+.campos {
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+margin-top: 15px;
+justify-content: space-evenly;
+align-items: center;
+text-align: center;
+}
+
+.campos label {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--space-cadet-2);
+}
+
+.campos input , textarea {
+width: 40vw;
+  max-width: 600px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--dark-purple);
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+
+input[type="submit"] {
+  display: inline-block;
+  border: 1px solid transparent;
+  background: linear-gradient(103deg, rgba(72, 68, 152, 1) 5%, rgba(105, 164, 254, 1) 45%, rgba(247, 18, 161, 1) 80%, rgb(168, 13, 109) 100% ) padding-box,
+              linear-gradient(200deg, rgb(0, 0, 0) 20%, var(--delft-blue) 100%) border-box;
+  border-radius: 1em;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: transform 0.5s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(283deg, rgb(168, 13, 109) 0%, rgba(247, 18, 161, 1) 10%, rgba(105, 164, 254, 1) 40%, rgba(72, 68, 152, 1) 80%) padding-box,
+              linear-gradient(200deg, rgba(72, 68, 152, 1) 20%, rgba(255, 255, 255, 1) 100%) border-box;
+  transform:scale(0.9)
+}
+
+input[type="submit"]:active {
+  transform: translateY(2px);
+}
 
 .descripcion {
   margin-bottom: 50px;
@@ -531,6 +588,11 @@ footer {
     li {
         font-size: large;
     }
+
+.campos input , textarea {
+width: 20vw;
+  max-width: 300px;
+    }
     
     #skill {
         margin-inline: auto;
@@ -555,28 +617,3 @@ footer {
 }
 
 
-.field {
-  margin-bottom: 10px;
-}
-
-.field label {
-  display: block;
-  font-size: 12px;
-  color: #777;
-}
-
-.field input {
-  display: block;
-  min-width: 250px;
-  line-height: 1.5;
-  font-size: 14px;
-}
-
-input[type="submit"] {
-  display: block;
-  padding: 6px 30px;
-  font-size: 14px;
-  background-color: #4460AA;
-  color: #fff;
-  border: none
-}
