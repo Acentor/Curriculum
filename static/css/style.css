@@ -13,11 +13,25 @@
 }
 
 * {
-  font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic3-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic3-Bold.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 
@@ -30,12 +44,15 @@ body {
     background-image: url(../img/abstractgradientdark.jpg);
     background-size: auto;
     background-position: center;
+    transition: font-family 0.3s ease;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
 }
 
 header {
     background-color: rgba(13, 7, 19, 0.8);
     color: var(--slate-blue);
-    padding: 5px;
+    padding: 0px 5px 0px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +79,7 @@ button:focus, input:focus , textarea:focus {
 }
 
 main {
-  padding-top: 20px;
+
   padding-left: 12%;
   padding-right: 12%;
 }
@@ -74,7 +91,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   align-items: center;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -123,6 +140,8 @@ main {
   margin-bottom: 10px;
   font-weight: bold;
   transition: transform 0.5s ease;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .botonPerfil:hover {
@@ -198,7 +217,7 @@ hr {
   text-align: center;
   align-items: center;
   margin-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .imgRedes {
@@ -337,7 +356,7 @@ footer {
 
 .tarjeta1 {
   width: 300px;
-  height: 400px;
+  height: 550px;
   background: linear-gradient(135deg, var(--blue-dark)35%, var(--red-purple));
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 10px 24px rgba(0, 0, 0, 0.19);
   border-radius: 10px;
@@ -347,7 +366,6 @@ footer {
   text-align: center;
   align-items: center;
   color: black;
-  font-size:medium;
   padding: 10px;
 }
 
@@ -360,8 +378,7 @@ footer {
   border-radius: 10px;
   border: 3px solid var(--red-purple);
   width: 280px;
-  height: 320px;
-  font-size: 0.9rem;
+  height: 430px;
 }
 
 .tarjeta img {
@@ -380,8 +397,7 @@ footer {
   border-radius: 10px;
   border: 3px solid var(--red-purple);
   width: 280px;
-  height: 150px;
-  font-size: 0.9rem;
+  height: 240px;
   margin-bottom: 10px;
 }
 
@@ -440,6 +456,12 @@ footer {
   visibility: hidden
 }
 
+.botones {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .centro {
   display: flex;
   flex-direction: column;
@@ -450,7 +472,7 @@ footer {
 .campos {
 display: flex;
 flex-direction: column;
-margin-bottom: 15px;
+margin-bottom: 10px;
 margin-top: 15px;
 justify-content: space-evenly;
 align-items: center;
@@ -464,7 +486,7 @@ text-align: center;
 }
 
 .campos input , textarea {
-width: 40vw;
+  width: 40vw;
   max-width: 600px;
   padding: 10px;
   margin-top: 5px;
@@ -472,7 +494,8 @@ width: 40vw;
   border-radius: 5px;
   font-size: 16px;
   box-sizing: border-box;
-
+  font-family: inherit;
+  font-size: inherit;
 }
 
 input[type="submit"] {
@@ -548,7 +571,26 @@ input[type="submit"]:active {
   visibility: visible;
   opacity: 1;
 }
- 
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#selectVisual {
+  margin-bottom: 10px;
+  background-color: #00000070;
+  width: fit-content;
+  height: fit-content;
+}
+
+#neglavel {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: large;
+}
 
 @media (max-width: 1000px) {
 

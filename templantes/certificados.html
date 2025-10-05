@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -22,6 +23,15 @@
     </div>
     </header>
     <main>
+    <div id="selectVisual">
+        <label id="neglavel" for="fuente-select"><img src="../static/img/visión-96.png" width="20px" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
+        <select id="fuente-select">
+            <option value="'Noto Sans', sans-serif">Predefinida</option>
+            <option value="'OpenDyslexic', sans-serif">Dixlexia</option>
+            <option value="'Atkinson Hyperlegible', sans-serif">Vision reducida</option>
+        </select>
+    </div>
+
         <div class="menu">
 
                 <div id="menuLinks">
@@ -32,7 +42,7 @@
 
             <div class="tarjetas" id="tarjeta">
 
-                                <div class="tarjeta1">
+                <div class="tarjeta1">
                 <p class="title">Credenciales Digitales</p>
                     <div class="tarjeta2">
                         <span>
@@ -60,7 +70,7 @@
                         </span>
                         <img src="../static/img/oracle.jpg" alt="ONE">
                         <br>
-                        <button class="seleccion" data-section="oracle" data-info="<div class='centro'><img src='../static/img/oracle.jpg' alt='ONE'>
+                       <div class="botones"> <button class="seleccion" data-section="oracle" data-info="<div class='centro'><img src='../static/img/oracle.jpg' alt='ONE'>
                                                             <p id='espacio'>Oracle Next Education - Programa</p>
     <ul>
    <li><a href='../static/data/Oracle Next Education - F2 T7 Back-end - Alura.pdf' target='_blank'>Oracle Next Education - F2 T7 Back-end - Alura</a></li>
@@ -150,10 +160,11 @@
 
 </div>
 " 
-                        data-img="#"> VER </button><br>
+                        data-img="#"> VER </button> 
                         <a class="select" href="https://app.aluracursos.com/user/angel-x1-00/
 fullCertificate/2eeb7ef3a893f7525f09bbb6b63a919c" target="_blank">Abrir</a>
                     </div>
+                </div>
                 </div>
 
 
@@ -164,7 +175,6 @@ fullCertificate/2eeb7ef3a893f7525f09bbb6b63a919c" target="_blank">Abrir</a>
 
                             Propuesta que llevan a cabo de manera conjunta el Ministerio de Educación y el Ministerio de Modernización de la Ciudad de Buenos Aires.
                             <br>
-                            Frontend, Backend, Bases de Datos, Git y GitHub, Metodologías Ágiles, Habilidades Blandas, Python.
                         </span>
                         <img src="../static/img/codoacodo.png" alt="CAC">
                         <br>
@@ -185,6 +195,7 @@ fullCertificate/2eeb7ef3a893f7525f09bbb6b63a919c" target="_blank">Abrir</a>
                         </span>
                         <img src="../static/img/codigofa.png" alt="CodigoFacilito">
                         <br>
+                        <div class="botones">
                         <button class="seleccion"  data-info="<div class='centro'>
                         <div class='tooltip'>
                             <span class='tooltiptext'>Código Facilito es una plataforma educativa en español dedicada al aprendizaje de programación, 
@@ -348,6 +359,7 @@ fullCertificate/2eeb7ef3a893f7525f09bbb6b63a919c" target="_blank">Abrir</a>
                         <a class="select" href="https://codigofacilito.com/usuarios/Acentor" target="_blank">Abrir Perfil</a>
                     </div>
                 </div>
+                </div>
 
                 <div class="tarjeta1">
                 <p class="title">REDFEL</p>
@@ -373,8 +385,7 @@ fullCertificate/2eeb7ef3a893f7525f09bbb6b63a919c" target="_blank">Abrir</a>
                         <span>
                             #SeProgramar - #YoProgramo
                             <br>
-                            Full Stack Junior: 
-                            CSS3, HTML5, Javascript, Angular, Java, Spring Boot
+                            Full Stack Junior
                             <br>
                             Argentina Programa 4.0 inicitativa gratuita de formacion
                             Secretaría de Economía del Conocimiento del Ministerio de Economía de la Nación

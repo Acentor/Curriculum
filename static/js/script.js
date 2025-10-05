@@ -5,28 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
     const validateForm = () => {
-        const title = document.getElementById('title').value.trim();
-        const name = document.getElementById('name').value.trim();
-        const message = document.getElementById('message').value.trim();
-        const email = document.getElementById('email').value.trim();
+        const title = document.getElementById('title')?.value.trim() || '';
+        const name = document.getElementById('name')?.value.trim() || '';
+        const message = document.getElementById('message')?.value.trim() || '';
+        const email = document.getElementById('email')?.value.trim() || '';
         
         const errors = [];
 
-        if (title === '') {
-            errors.push('El campo Título es obligatorio.');
-        }
-        if (name === '') {
-            errors.push('El campo Nombre es obligatorio.');
-        }
-        if (message === '') {
-            errors.push('El campo Mensaje es obligatorio.');
-        }
+        if (title === '') errors.push('El campo Título es obligatorio.');
+        if (name === '') errors.push('El campo Nombre es obligatorio.');
+        if (message === '') errors.push('El campo Mensaje es obligatorio.');
         if (email === '') {
             errors.push('El campo Email es obligatorio.');
-        } else {
-            if (!emailRegExp.test(email)) {
-                errors.push('El formato del Email no es válido. Debe ser: usuario@dominio.com');
-            }
+        } else if (!emailRegExp.test(email)) {
+            errors.push('El formato del Email no es válido. Debe ser: usuario@dominio.com');
         }
         
         if (errors.length > 0) {
@@ -46,9 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form && btn) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-            if (!validateForm()) {
-                return;
-            }
+            if (!validateForm()) return;
+            
             btn.value = "Enviando...";
 
             const serviceID = "default_service";
@@ -58,21 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 () => {
                     btn.value = "Enviar Mensaje";
                     Swal.fire({
-                    title: "Mensaje Enviado, Gracias por su Contacto",
-                    icon: "success",
+                        title: "Mensaje Enviado, Gracias por su Contacto",
+                        icon: "success",
                     }).then((result) => {
-                    if (result.isConfirmed) {
-                        form.reset(); 
-                        window.location.href = "../index.html";
-                    }
+                        if (result.isConfirmed) {
+                            form.reset(); 
+                            window.location.href = "../index.html";
+                        }
                     });
                 },
                 (err) => {
                     btn.value = "Enviar Mensaje";
                     Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: 'Error al enviar el mensaje: ' + JSON.stringify(err),
+                        icon: "error",
+                        title: "Oops...",
+                        text: 'Error al enviar el mensaje: ' + JSON.stringify(err),
                     });
                 }
             );
@@ -205,9 +196,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(step);
             }
         }
-
         requestAnimationFrame(step);
     }
-
     handleDirectNavigation();
+
+    const fuenteSelect = document.getElementById('fuente-select');
+    const cuerpo = document.body;
+
+    if (fuenteSelect) {
+        fuenteSelect.addEventListener('change', (event) => {
+            const valorFuente = event.target.value;
+            cuerpo.style.fontFamily = valorFuente;
+
+            if (valorFuente === "'Atkinson Hyperlegible', sans-serif") {
+                cuerpo.style.fontSize = '1.35em';
+                cuerpo.style.fontWeight = 'bold';
+            } else {
+                cuerpo.style.fontSize = ''; 
+            }
+        });
+    }
 });

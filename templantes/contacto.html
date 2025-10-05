@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -27,6 +28,14 @@
     </div>
     </header>
     <main>
+        <div id="selectVisual">
+            <label id="neglavel" for="fuente-select"><img src="../static/img/visión-96.png" width="20px" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
+            <select id="fuente-select">
+                <option value="'Noto Sans', sans-serif">Predefinida</option>
+                <option value="'OpenDyslexic', sans-serif">Dixlexia</option>
+                <option value="'Atkinson Hyperlegible', sans-serif">Vision reducida</option>
+            </select>
+        </div>
         <div class="menu">
 
             <div id="menuLinks">
@@ -59,6 +68,7 @@
                 </form>
             </section>
             </div>
+            <br>
     </main>
     <footer>
         <p>&copy; Juan Antonio Artigas.</p>
