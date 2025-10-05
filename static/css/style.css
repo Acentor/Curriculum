@@ -34,6 +34,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('../fonts/Gill\ Sans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('../fonts//Gill\ Sans\ Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 body, h1, h2, p, ul, li {
     margin: 0;
@@ -47,6 +62,11 @@ body {
     transition: font-family 0.3s ease;
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
+}
+
+body strong {
+  font-weight: 700;
+  color: #000;
 }
 
 header {
@@ -591,6 +611,12 @@ select {
   color: white;
   font-size: large;
 }
+
+body.bionic-active header h1,
+body.bionic-active header h3 {
+    background-color: rgba(245, 245, 245, 0.35);
+}
+
 
 @media (max-width: 1000px) {
 
