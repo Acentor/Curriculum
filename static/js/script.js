@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const btn = document.getElementById("button");
     const form = document.getElementById("form");
-    
-    const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+    const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const validateForm = () => {
         const title = document.getElementById('title')?.value.trim() || '';
         const name = document.getElementById('name')?.value.trim() || '';
         const message = document.getElementById('message')?.value.trim() || '';
         const email = document.getElementById('email')?.value.trim() || '';
-        
+
         const errors = [];
 
         if (title === '') errors.push('El campo Título es obligatorio.');
@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (!emailRegExp.test(email)) {
             errors.push('El formato del Email no es válido. Debe ser: usuario@dominio.com');
         }
-        
+
         if (errors.length > 0) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Errores de Validación',
-                html: errors.join('<br>'), 
+                html: errors.join('<br>'),
                 confirmButtonText: 'Corregir'
             });
             return false;
@@ -38,9 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             if (!validateForm()) return;
-            
-            btn.value = "Enviando...";
 
+            btn.value = "Enviando...";
             const serviceID = "default_service";
             const templateID = "template_jfpjh7b";
 
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         icon: "success",
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            form.reset(); 
+                            form.reset();
                             window.location.href = "../index.html";
                         }
                     });
@@ -69,12 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const menus     = document.querySelectorAll('.menu');
-    const infoBox   = document.getElementById('infoBox');
-    const infoText  = document.getElementById('infoText');
+    const menus = document.querySelectorAll('.menu');
+    const infoBox = document.getElementById('infoBox');
+    const infoText = document.getElementById('infoText');
     const infoTitle = document.getElementById('infoTitle');
-    const infoImg   = document.getElementById('infoImg');
-    const hideBtn   = document.getElementById('hideBtn');
+    const infoImg = document.getElementById('infoImg');
+    const hideBtn = document.getElementById('hideBtn');
 
     if (infoImg) {
         infoImg.addEventListener('error', () => {
@@ -87,24 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return urlParams.get(name);
     }
 
-    function loadSection(sectionId) {
-        const targetButton = document.querySelector(`[data-section="${sectionId}"]`);
-        if (targetButton) {
-            targetButton.click();
-            return true;
-        }
-        return false;
-    }
-
-    function handleDirectNavigation() {
-        const section = getURLParameter('section');
-        if (section) {
-            setTimeout(() => {
-                loadSection(section);
-            }, 100);
-        }
-    }
-
     function updateURL(sectionId) {
         const url = new URL(window.location);
         if (sectionId) {
@@ -113,6 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
             url.searchParams.delete('section');
         }
         window.history.replaceState({}, '', url);
+    }
+
+    function smoothScrollTo(targetY, duration = 1000) {
+        const startY = window.scrollY;
+        const diff = targetY - startY;
+        let start;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const time = timestamp - start;
+            const percent = Math.min(time / duration, 1);
+
+            const easing = percent < 0.5
+                ? 2 * percent * percent
+                : -1 + (4 - 2 * percent) * percent;
+
+            window.scrollTo(0, startY + diff * easing);
+
+            if (time < duration) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
     }
 
     let modoBionicoActivo = false;
@@ -136,45 +140,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
-    function aplicarBionicoAElemento(elemento) {
-        const elementosExcluidos = ['SCRIPT', 'STYLE', 'SELECT', 'TEXTAREA', 'IMG', 'INPUT', 'BR', 'HR', 'A'];
-        if (elementosExcluidos.includes(elemento.tagName)) return;
-
-        const htmlActual = elemento.innerHTML;
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlActual;
-        procesarNodosTexto(tempDiv);
-        elemento.innerHTML = tempDiv.innerHTML;
-    }
-
     function procesarNodosTexto(contenedor) {
-        const elementosDeFormatoExcluidos = ['STRONG', 'B', 'EM', 'I', 'A'];
-        
-        const walker = document.createTreeWalker(
-            contenedor,
-            NodeFilter.SHOW_TEXT,
-            {
-                acceptNode: function(node) {
-                    if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
-                    const parentTagName = node.parentElement.tagName;
-                    
-                    const elementosExcluidosGenerales = ['SCRIPT', 'STYLE', 'SELECT', 'TEXTAREA'];
-                    if (elementosExcluidosGenerales.includes(parentTagName)) return NodeFilter.FILTER_REJECT;
-                    
-                    if (elementosDeFormatoExcluidos.includes(parentTagName)) return NodeFilter.FILTER_REJECT;
-                    
-                    return NodeFilter.FILTER_ACCEPT;
-                }
-            }
-        );
+        const excluidos = [
+            'STRONG', 'B', 'EM', 'I',
+            'A', 'BUTTON', 'SCRIPT', 'STYLE',
+            'SELECT', 'TEXTAREA', 'INPUT'
+        ];
 
-        const nodosAReemplazar = [];
+        const walker = document.createTreeWalker(contenedor, NodeFilter.SHOW_TEXT, {
+            acceptNode: function (node) {
+                if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+
+                const parent = node.parentElement;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+
+                if (excluidos.includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                
+                if (parent.classList.contains('tooltip')) return NodeFilter.FILTER_REJECT;
+                
+                if (parent.closest('.tooltip')) return NodeFilter.FILTER_REJECT;
+
+                if (parent.closest('a') || parent.closest('button')) return NodeFilter.FILTER_REJECT;
+
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+
+        const nodos = [];
         let nodo;
         while (nodo = walker.nextNode()) {
-            nodosAReemplazar.push(nodo);
+            nodos.push(nodo);
         }
 
-        nodosAReemplazar.forEach(nodoTexto => {
+        nodos.forEach(nodoTexto => {
             const texto = nodoTexto.textContent;
             const nuevoHTML = aplicarLecturaBionicaATexto(texto);
             const span = document.createElement('span');
@@ -183,10 +181,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function restaurarInfoBox() {
+        if (infoTitle && contenidosOriginales.has(infoTitle)) {
+            infoTitle.innerHTML = contenidosOriginales.get(infoTitle);
+            contenidosOriginales.delete(infoTitle);
+        }
+        if (infoText && contenidosOriginales.has(infoText)) {
+            infoText.innerHTML = contenidosOriginales.get(infoText);
+            contenidosOriginales.delete(infoText);
+        }
+    }
+
+    function limpiarSelecciones() {
+        menus.forEach(menu =>
+            [...menu.children].forEach(li => li.classList.remove('selected'))
+        );
+    }
+
+    function smoothScrollTo(targetY, duration = 1000) {
+        const startY = window.scrollY;
+        const diff = targetY - startY;
+        let start;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const time = timestamp - start;
+            const percent = Math.min(time / duration, 1);
+
+            const easing = percent < 0.5
+                ? 2 * percent * percent
+                : -1 + (4 - 2 * percent) * percent;
+
+            window.scrollTo(0, startY + diff * easing);
+
+            if (time < duration) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
+    function aplicarBionicoAElemento(elemento) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = elemento.innerHTML;
+        procesarNodosTexto(tempDiv);
+        elemento.innerHTML = tempDiv.innerHTML;
+    }
+
     function restaurarContenidoOriginal(elemento) {
         if (contenidosOriginales.has(elemento)) {
             elemento.innerHTML = contenidosOriginales.get(elemento);
-            contenidosOriginales.delete(elemento); 
+            contenidosOriginales.delete(elemento);
         }
     }
 
@@ -196,17 +241,20 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('header h3'),
             ...document.querySelectorAll('.amenu'),
             document.querySelector('#nota'),
-        ].filter(el => 
-            el !== null && 
+            ...document.querySelectorAll('.tarjeta'),
+            ...document.querySelectorAll('.tarjeta2')
+        ].filter(el =>
+            el !== null &&
             !el.classList.contains('botonPerfil') &&
-            el.tagName !== 'A'
+            !el.classList.contains('tooltip') &&
+            el.tagName !== 'A' &&
+            el.tagName !== 'BUTTON'
         );
 
-        const contenedoresUnicos = Array.from(new Set(contenedores));
-
-        contenedoresUnicos.forEach(contenedor => {
-            guardarContenidoOriginal(contenedor);
-            aplicarBionicoAElemento(contenedor);
+        const unicos = Array.from(new Set(contenedores));
+        unicos.forEach(c => {
+            guardarContenidoOriginal(c);
+            aplicarBionicoAElemento(c);
         });
 
         if (infoBox && infoBox.style.display !== 'none') {
@@ -226,31 +274,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const contenedores = [
             document.querySelector('header h1'),
             document.querySelector('header h3'),
-            ...document.querySelectorAll('.botonPerfil'), 
             ...document.querySelectorAll('.amenu'),
             document.querySelector('#nota'),
+            ...document.querySelectorAll('.tarjeta'),
+            ...document.querySelectorAll('.tarjeta2'),
             document.getElementById('infoText'),
-            document.getElementById('infoTitle'),
-            ...document.querySelectorAll('a')
+            document.getElementById('infoTitle')
         ].filter(el => el !== null);
 
-        const contenedoresUnicos = Array.from(new Set(contenedores));
-
-        contenedoresUnicos.forEach(contenedor => {
-            restaurarContenidoOriginal(contenedor);
-        });
+        const unicos = Array.from(new Set(contenedores));
+        unicos.forEach(c => restaurarContenidoOriginal(c));
         modoBionicoActivo = false;
-    }
-
-    function restaurarInfoBox() {
-        if (infoTitle && contenidosOriginales.has(infoTitle)) {
-            infoTitle.innerHTML = contenidosOriginales.get(infoTitle);
-            contenidosOriginales.delete(infoTitle);
-        }
-        if (infoText && contenidosOriginales.has(infoText)) {
-            infoText.innerHTML = contenidosOriginales.get(infoText);
-            contenidosOriginales.delete(infoText);
-        }
     }
 
     menus.forEach(menu => {
@@ -260,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             limpiarSelecciones();
             e.target.classList.add('selected');
 
-            restaurarInfoBox(); 
+            restaurarInfoBox();
 
             const contenidoOriginal = e.target.dataset.info;
             const tituloOriginal = e.target.textContent;
@@ -292,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }, 100);
             }
-            
+
             if (infoBox) {
                 infoBox.style.display = 'block';
                 setTimeout(() => {
@@ -319,66 +353,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function limpiarSelecciones() {
-        menus.forEach(menu =>
-            [...menu.children].forEach(li => li.classList.remove('selected'))
-        );
-    }
-
-    function smoothScrollTo(targetY, duration = 1000) {
-        const startY = window.scrollY;
-        const diff = targetY - startY;
-        let start;
-
-        function step(timestamp) {
-            if (!start) start = timestamp;
-            const time = timestamp - start;
-            const percent = Math.min(time / duration, 1);
-
-            const easing = percent < 0.5
-                ? 2 * percent * percent
-                : -1 + (4 - 2 * percent) * percent;
-
-            window.scrollTo(0, startY + diff * easing);
-
-            if (time < duration) {
-                requestAnimationFrame(step);
-            }
-        }
-        requestAnimationFrame(step);
-    }
-    handleDirectNavigation();
-
     const fuenteSelect = document.getElementById('fuente-select');
     const cuerpo = document.body;
-    const COMIC_SANS_VALUE = "'Gill Sans', Arial";
-    const BIONIC_ACTIVE_CLASS = 'bionic-active';
 
     if (fuenteSelect) {
         fuenteSelect.addEventListener('change', (event) => {
-            const valorFuente = event.target.value;
+            const valorFuente = (event.target.value || '').trim();
             cuerpo.style.fontFamily = valorFuente;
 
-            if (valorFuente === COMIC_SANS_VALUE) {
-                if (!modoBionicoActivo) {
-                    aplicarBionicoATodosLosContenedores();
-                }
-                cuerpo.classList.add(BIONIC_ACTIVE_CLASS);
-                cuerpo.style.fontSize = ''; 
+            const esPredefinida = valorFuente.includes('Noto Sans');
+            const esBionica = valorFuente.includes('Gill Sans');
+            const esAtkinson = valorFuente.includes('Atkinson Hyperlegible');
+            const esDilexia = valorFuente.includes('OpenDyslexic');
+
+            if (esPredefinida) {
+                cuerpo.classList.remove('fuente-alternativa');
+                cuerpo.style.fontSize = '';
                 cuerpo.style.fontWeight = '';
+                desactivarBionicoEnTodosLosContenedores();
             } else {
-                if (modoBionicoActivo) {
-                    desactivarBionicoEnTodosLosContenedores();
-                }
-                cuerpo.classList.remove(BIONIC_ACTIVE_CLASS);
+                cuerpo.classList.add('fuente-alternativa');
                 
-                if (valorFuente === "'Atkinson Hyperlegible', sans-serif") {
-                    cuerpo.style.fontSize = '1.35em';
+                if (esAtkinson) {
+                    cuerpo.style.fontSize = '1.5em';
                     cuerpo.style.fontWeight = 'bold';
                 } else {
-                    cuerpo.style.fontSize = ''; 
+                    cuerpo.style.fontSize = '';
                     cuerpo.style.fontWeight = '';
                 }
+            }
+
+            if (esBionica) {
+                aplicarBionicoATodosLosContenedores();
+            }
+            if (esDilexia || esAtkinson) {
+                desactivarBionicoEnTodosLosContenedores();
             }
         });
     }
