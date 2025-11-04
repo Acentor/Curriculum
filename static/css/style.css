@@ -4,14 +4,15 @@
 --licorice: #0D0713ff;
 --raisin-black: #100B1Cff;
 --space-cadet-2: #b9c3ff;
---delft-blue: #293672ff;
 --dark-purple: #21112Dff;
---green-blue: #2F66AFff;
---red-purple: #FF1CC5;
---red-purple2: #ff54d4;
---blue-dark: #296BB7;
 --negro: black;
 --blanco: whitesmoke;
+--oscuro: #0d0713cc;
+--delft-blue: #293672ff;
+--green-blue: #484498;
+--red-purple: #69a4fe;
+--red-purple2: #f712a1;
+--blue-dark: #a80d6d;
 }
 
 * {
@@ -52,6 +53,15 @@
 }
 
 
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -72,7 +82,7 @@ body strong {
 }
 
 header {
-    background-color: rgba(13, 7, 19, 0.8);
+    background-color: var(--oscuro);
     color: var(--slate-blue);
     padding: 0px 5px 0px 5px;
     display: flex;
@@ -116,7 +126,7 @@ main {
   align-items: center;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(61, 68, 84, 1) 20%, rgba(2, 0, 36, 0.83) 95%);
+  background: radial-gradient(circle, #020024 0%, #3d4454 20%, #020024d4 95%);
 }
 
 
@@ -149,8 +159,8 @@ main {
 .botonPerfil {
   display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, rgba(72, 68, 152, 1) 5%, rgba(105, 164, 254, 1) 45%, rgba(247, 18, 161, 1) 80%, rgb(168, 13, 109) 100% ) padding-box,
-              linear-gradient(200deg, rgb(0, 0, 0) 20%, var(--delft-blue) 100%) border-box;
+  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple2) 80%, var(--blue-dark) 100% ) padding-box,
+              linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
   text-align: center;
@@ -166,8 +176,8 @@ main {
 }
 
 .botonPerfil:hover {
-  background: linear-gradient(283deg, rgb(168, 13, 109) 0%, rgba(247, 18, 161, 1) 10%, rgba(105, 164, 254, 1) 40%, rgba(72, 68, 152, 1) 80%) padding-box,
-              linear-gradient(200deg, rgba(72, 68, 152, 1) 20%, rgba(255, 255, 255, 1) 100%) border-box;
+  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple2) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
+              linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
 
@@ -282,7 +292,7 @@ hr {
 }
 
 #infoBox button {
-  color: var(--licorice);
+  color: black;
   margin-top: 1rem;
   padding: .4rem .8rem;
   border-color: var(--slate-blue);
@@ -336,7 +346,7 @@ hr {
 
 #descargacv a {
   text-decoration: none;
-  color: var(--green-blue);
+  color: var(--space-cadet-2);
   font-weight: bold;
   padding: 10px;
 }
@@ -425,15 +435,15 @@ footer {
   border-radius: 10px;
   border: 3px solid var(--red-purple);
   width: 280px;
-  height: 180px;
-  margin-bottom: 10px;
+  height: 190px;
+  margin-bottom: 8px;
   overflow-y: auto;
   font-family: inherit;
   font-size: inherit;
 }
 
 .tarjeta2 span {
-  padding-top: 30px;
+  padding-top: 18px;
 }
 
 .tarjeta2 img {
@@ -480,6 +490,7 @@ footer {
   background-color: var(--dark-purple);
   padding-left: 20px;
   padding-right: 20px;
+  border: #000000 2.5px solid;
 }
 
 .select:hover {
@@ -536,8 +547,8 @@ text-align: center;
 input[type="submit"] {
   display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, rgba(72, 68, 152, 1) 5%, rgba(105, 164, 254, 1) 45%, rgba(247, 18, 161, 1) 80%, rgb(168, 13, 109) 100% ) padding-box,
-              linear-gradient(200deg, rgb(0, 0, 0) 20%, var(--delft-blue) 100%) border-box;
+  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple2) 80%, var(--blue-dark) 100% ) padding-box,
+              linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
   text-align: center;
@@ -551,8 +562,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: linear-gradient(283deg, rgb(168, 13, 109) 0%, rgba(247, 18, 161, 1) 10%, rgba(105, 164, 254, 1) 40%, rgba(72, 68, 152, 1) 80%) padding-box,
-              linear-gradient(200deg, rgba(72, 68, 152, 1) 20%, rgba(255, 255, 255, 1) 100%) border-box;
+  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple2) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
+              linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
 
@@ -663,7 +674,7 @@ body.fuente-alternativa .tarjeta1 {
 
 #modoInversoBtn {
   background-color: var(--dark-purple);
-  color: var(--space-cadet-2);
+  color: var(--blanco);
   border: 2px solid var(--slate-blue);
   padding: 8px 15px;
   border-radius: 8px;

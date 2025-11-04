@@ -411,7 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '--red-purple2': getComputedStyle(root).getPropertyValue('--red-purple2'),
         '--blue-dark': getComputedStyle(root).getPropertyValue('--blue-dark'),
         '--negro': getComputedStyle(root).getPropertyValue('--negro'),
-        '--blanco': getComputedStyle(root).getPropertyValue('--blanco')
+        '--blanco': getComputedStyle(root).getPropertyValue('--blanco'),
+        '--oscuro': getComputedStyle(root).getPropertyValue('--oscuro')
     };
 
     if (btnModoInverso) {
@@ -423,14 +424,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (modoInverso) {
                 // Cambiar colores a tonos claros/invertidos
-                root.style.setProperty('--slate-blue', '#ffb3c1');
-                root.style.setProperty('--eminence', '#ff9bff');
-                root.style.setProperty('--licorice', '#7b41b6ff');
-                root.style.setProperty('--raisin-black', '#dddddd');
-                root.style.setProperty('--space-cadet-2', '#222222');
-                root.style.setProperty('--dark-purple', '#f4d9ff');
+                root.style.setProperty('--slate-blue', '#bacaf5');
+                root.style.setProperty('--eminence', '#172a2e');
+                root.style.setProperty('--licorice', '#c5f4fd');
+                root.style.setProperty('--raisin-black', '#d097ee');
+                root.style.setProperty('--space-cadet-2', '#81c3f5');
+                root.style.setProperty('--dark-purple', '#ef88ec');
                 root.style.setProperty('--negro', 'whitesmoke');
                 root.style.setProperty('--blanco', 'black');
+                root.style.setProperty('--oscuro', '#3a6972');
+                root.style.setProperty('--delft-blue', '#d1f6fe');
+                root.style.setProperty('--green-blue', '#baf1fd');
+                root.style.setProperty('--red-purple', '#d097ee');
+                root.style.setProperty('--red-purple2', '#172a2e');
+                root.style.setProperty('--blue-dark', '#bacaf5');
             } else {
                 Object.entries(coloresOriginales).forEach(([variable, valor]) => {
                     root.style.setProperty(variable, valor);
