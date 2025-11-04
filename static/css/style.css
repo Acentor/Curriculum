@@ -10,6 +10,8 @@
 --red-purple: #FF1CC5;
 --red-purple2: #ff54d4;
 --blue-dark: #296BB7;
+--negro: black;
+--blanco: whitesmoke;
 }
 
 * {
@@ -250,7 +252,7 @@ hr {
 
 .amenu {
   text-decoration: none;
-  color: whitesmoke;
+  color: var(--blanco);
   background: url(../img/abstractgradientdark.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -630,6 +632,11 @@ body.bionic-active header h3 {
     background-color: rgba(245, 245, 245, 0.35);
 }
 
+header h1,
+header h3 {
+    background-color: transparent;
+}
+
 strong {
     font-weight: 700;
     text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2);
@@ -652,6 +659,35 @@ body.fuente-alternativa .tarjeta2 {
 
 body.fuente-alternativa .tarjeta1 {
     height: 520px;
+}
+
+#modoInversoBtn {
+  background-color: var(--dark-purple);
+  color: var(--space-cadet-2);
+  border: 2px solid var(--slate-blue);
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  transition: transform 0.3s;
+}
+
+#modoInversoBtn:hover {
+  transform: scale(0.95);
+}
+
+body.inverso {
+  background-image: url(../img/abstractgradientlight.jpg) !important;
+}
+
+body.inverso .amenu {
+  background: url(../img/abstractgradientlight.jpg) no-repeat center / cover !important;
+}
+
+.configuracion {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 1000px) {

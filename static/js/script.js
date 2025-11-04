@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 aplicarBionicoAElemento(infoTitle);
             }
         }
+        document.body.classList.add('bionic-active');
         modoBionicoActivo = true;
     }
 
@@ -284,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const unicos = Array.from(new Set(contenedores));
         unicos.forEach(c => restaurarContenidoOriginal(c));
+        document.body.classList.remove('bionic-active');
         modoBionicoActivo = false;
     }
 
@@ -388,6 +390,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (esDilexia || esAtkinson) {
                 desactivarBionicoEnTodosLosContenedores();
+            }
+        });
+    }
+
+    const btnModoInverso = document.getElementById('modoInversoBtn');
+    const root = document.documentElement;
+    let modoInverso = false;
+
+    const coloresOriginales = {
+        '--slate-blue': getComputedStyle(root).getPropertyValue('--slate-blue'),
+        '--eminence': getComputedStyle(root).getPropertyValue('--eminence'),
+        '--licorice': getComputedStyle(root).getPropertyValue('--licorice'),
+        '--raisin-black': getComputedStyle(root).getPropertyValue('--raisin-black'),
+        '--space-cadet-2': getComputedStyle(root).getPropertyValue('--space-cadet-2'),
+        '--delft-blue': getComputedStyle(root).getPropertyValue('--delft-blue'),
+        '--dark-purple': getComputedStyle(root).getPropertyValue('--dark-purple'),
+        '--green-blue': getComputedStyle(root).getPropertyValue('--green-blue'),
+        '--red-purple': getComputedStyle(root).getPropertyValue('--red-purple'),
+        '--red-purple2': getComputedStyle(root).getPropertyValue('--red-purple2'),
+        '--blue-dark': getComputedStyle(root).getPropertyValue('--blue-dark'),
+        '--negro': getComputedStyle(root).getPropertyValue('--negro'),
+        '--blanco': getComputedStyle(root).getPropertyValue('--blanco')
+    };
+
+    if (btnModoInverso) {
+        btnModoInverso.addEventListener('click', () => {
+            modoInverso = !modoInverso;
+
+            // ✅ Activar/desactivar clase en <body>
+            document.body.classList.toggle('inverso', modoInverso);
+
+            if (modoInverso) {
+                // Cambiar colores a tonos claros/invertidos
+                root.style.setProperty('--slate-blue', '#ffb3c1');
+                root.style.setProperty('--eminence', '#ff9bff');
+                root.style.setProperty('--licorice', '#7b41b6ff');
+                root.style.setProperty('--raisin-black', '#dddddd');
+                root.style.setProperty('--space-cadet-2', '#222222');
+                root.style.setProperty('--dark-purple', '#f4d9ff');
+                root.style.setProperty('--negro', 'whitesmoke');
+                root.style.setProperty('--blanco', 'black');
+            } else {
+                Object.entries(coloresOriginales).forEach(([variable, valor]) => {
+                    root.style.setProperty(variable, valor);
+                });
             }
         });
     }
