@@ -412,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '--blue-dark': getComputedStyle(root).getPropertyValue('--blue-dark'),
         '--negro': getComputedStyle(root).getPropertyValue('--negro'),
         '--blanco': getComputedStyle(root).getPropertyValue('--blanco'),
+        '--red-purple3': getComputedStyle(root).getPropertyValue('--red-purple3'),
         '--oscuro': getComputedStyle(root).getPropertyValue('--oscuro')
     };
 
@@ -437,7 +438,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 root.style.setProperty('--green-blue', '#baf1fd');
                 root.style.setProperty('--red-purple', '#d097ee');
                 root.style.setProperty('--red-purple2', '#172a2e');
-                root.style.setProperty('--blue-dark', '#bacaf5');
+                root.style.setProperty('--red-purple3', '#ea6ae7');
+                root.style.setProperty('--blue-dark', '#81c3f5');
             } else {
                 Object.entries(coloresOriginales).forEach(([variable, valor]) => {
                     root.style.setProperty(variable, valor);

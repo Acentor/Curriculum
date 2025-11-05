@@ -13,6 +13,7 @@
 --red-purple: #69a4fe;
 --red-purple2: #f712a1;
 --blue-dark: #a80d6d;
+--red-purple3: #f712a1;
 }
 
 * {
@@ -159,7 +160,7 @@ main {
 .botonPerfil {
   display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple2) 80%, var(--blue-dark) 100% ) padding-box,
+  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
               linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
@@ -176,7 +177,7 @@ main {
 }
 
 .botonPerfil:hover {
-  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple2) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
+  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
               linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
