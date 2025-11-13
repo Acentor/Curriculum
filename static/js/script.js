@@ -333,11 +333,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (infoBox && contTitulo) {
                 infoBox.style.display = 'block';
                 setTimeout(() => {
-                    // 1. Calcular la posición Y del contTitulo
                     const y = contTitulo.getBoundingClientRect().top + window.scrollY;
-                    // 2. Ejecutar el scroll suave a esa posición
-                    smoothScrollTo(y, 600); // 600ms para un scroll rápido y suave
-                    infoBox.focus(); // Mantener el foco en la caja principal
+                    smoothScrollTo(y, 600);
+                    infoBox.focus();
                 }, 100);
             }
         });
