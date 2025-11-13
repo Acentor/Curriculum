@@ -10,11 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-    emailjs.init('cvRCRMpW83xirZkDO')
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script> emailjs.init('cvRCRMpW83xirZkDO')</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -30,7 +27,7 @@
     <main>
         <div class="configuracion">
         <div id="selectVisual">
-            <label id="neglavel" for="fuente-select"><img src="../static/img/visión-96.png" width="20px" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
+            <label id="neglavel" for="fuente-select"><img src="../static/img/visión-96.png" width="20" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
             <select id="fuente-select">
                 <option value="'Noto Sans', sans-serif">Predefinida</option>
                 <option value="'OpenDyslexic', sans-serif">Dixlexia</option>
@@ -51,6 +48,7 @@
             <br>
 
             <section class="profile-section">
+                <h2 hidden>Contacto</h2>
                 <form id="form">
                 <div class="campos">
                     <label for="title">Asunto</label>
@@ -62,7 +60,7 @@
                 </div>
                 <div class="campos">
                     <label for="message">Mensaje</label>
-                    <textarea type="text" name="message" id="message" rows="5" minlength="5"></textarea>
+                    <textarea name="message" id="message" rows="5" minlength="5"></textarea>
                 </div>
                 <div class="campos">
                     <label for="email">E-mail</label>
