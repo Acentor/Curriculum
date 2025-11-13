@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoTitle = document.getElementById('infoTitle');
     const infoImg = document.getElementById('infoImg');
     const hideBtn = document.getElementById('hideBtn');
+    const contTitulo = document.getElementById('contTitulo');
 
     if (infoImg) {
         infoImg.addEventListener('error', () => {
@@ -329,11 +330,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 100);
             }
 
-            if (infoBox) {
+            if (infoBox && contTitulo) {
                 infoBox.style.display = 'block';
                 setTimeout(() => {
-                    infoBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    infoBox.focus();
+                    // 1. Calcular la posición Y del contTitulo
+                    const y = contTitulo.getBoundingClientRect().top + window.scrollY;
+                    // 2. Ejecutar el scroll suave a esa posición
+                    smoothScrollTo(y, 600); // 600ms para un scroll rápido y suave
+                    infoBox.focus(); // Mantener el foco en la caja principal
                 }, 100);
             }
         });
@@ -413,7 +417,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '--negro': getComputedStyle(root).getPropertyValue('--negro'),
         '--blanco': getComputedStyle(root).getPropertyValue('--blanco'),
         '--red-purple3': getComputedStyle(root).getPropertyValue('--red-purple3'),
-        '--oscuro': getComputedStyle(root).getPropertyValue('--oscuro')
+        '--oscuro': getComputedStyle(root).getPropertyValue('--oscuro'),
+        '--resaltador': getComputedStyle(root).getPropertyValue('--resaltador')
     };
 
     if (btnModoInverso) {
@@ -440,6 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 root.style.setProperty('--red-purple2', '#172a2e');
                 root.style.setProperty('--red-purple3', '#ea6ae7');
                 root.style.setProperty('--blue-dark', '#81c3f5');
+                root.style.setProperty('--resaltador', '#00000070');
             } else {
                 Object.entries(coloresOriginales).forEach(([variable, valor]) => {
                     root.style.setProperty(variable, valor);

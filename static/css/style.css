@@ -14,6 +14,7 @@
 --red-purple2: #f712a1;
 --blue-dark: #a80d6d;
 --red-purple3: #f712a1;
+--resaltador: #00000000 ;
 }
 
 * {
@@ -189,6 +190,10 @@ main {
 
 .botonPerfil:active {
   transform: translateY(2px);
+}
+
+.botonPerfil img {
+  vertical-align: middle;
 }
 
 hr {
@@ -380,6 +385,17 @@ footer {
   bottom: 0;
   width: 100%;
   border-top: var(--eminence) 3px solid;
+}
+
+footer img {
+  vertical-align: middle;
+  width: 20px;
+  background-color: var(--resaltador) ;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--blanco);
 }
 
 .tarjetas {
@@ -756,7 +772,8 @@ body.inverso .amenu {
     }
 
     .campos input , textarea {
-    width: 20vw;
+      width: 25vw;
+      min-width: 200px;
       max-width: 300px;
     }
     
