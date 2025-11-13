@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close,contact_page,school,work" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close,contact_page,school,work">
 
 </head>
 
@@ -27,7 +27,7 @@
     <main>
         <div class="configuracion">
         <div id="selectVisual">
-            <label id="neglavel" for="fuente-select"><img src="./static/img/visión-96.png" width="20px" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
+            <label id="neglavel" for="fuente-select"><img src="./static/img/visión-96.png" width="20" alt="Ayuda visual by iconos8.es"> Ayuda Visual</label>
             <select id="fuente-select">
                 <option value="'Noto Sans', sans-serif">Predefinida</option>
                 <option value="'OpenDyslexic', sans-serif">Dixlexia</option>
@@ -46,42 +46,59 @@
     </div>
 
     <section class="profile-section">
-        <div class="menu"><div class="menulista"><ul id="menuUno" >
+        <div class="menu"><div class="menulista"><h2 hidden>menus</h2><ul id="menuUno" >
             <li><button class="botonPerfil" data-info="<b id='neg'>NOMBRE Y APELLIDO:</b> Juan Antonio, Artigas.
 
                             <b id='neg'>FECHA DE NACIMIENTO:</b> 10/07/1983
 
-                            <b id='neg'>ESTADO CIVIL:</b> Soltero"
-            data-img="./static/img/informacion-personal.png"><span class="material-symbols-outlined">contact_page</span>Datos Personales</button> </li>
+                            <b id='neg'>ESTADO CIVIL:</b> Soltero
 
-            <li><hr></li>
+                            <b id='neg'>DIRECCIÓN:</b> Salta Capital, Argentina.
 
+                            <b id='neg'>PRIMARIO:</b> COMPLETO EN ESCUELA Nº 368 “María Ernestina Gutiérrez” Oran.
 
-            <li><button class="botonPerfil" data-info="<b id='neg'>PRIMARIO:</b> COMPLETO EN ESCUELA Nº 368 “María Ernestina Gutiérrez” Oran.
-
-                        <b id='neg'>SECUNDARIO:</b> COMPLETO EN ESCUELA DE COMERCIO Nº 75 “Dr. Arturo Salta Argentina. (2002)
+                           <b id='neg'>SECUNDARIO:</b> COMPLETO EN ESCUELA DE COMERCIO Nº 75 “Dr. Arturo Salta Argentina. (2002)
                         TITULO: PERITO MERCANTILCON ORIENTACION EN SISTEMAS CONTABLES."
-                        data-img="./static/img/estudios basicos.png"><span class="material-symbols-outlined">school</span>Estudios Basicos</button></li>
+            data-img="./static/img/informacion-personal.png"><span class="material-symbols-outlined"></span>Datos Personales</button> </li>
 
             <li><hr></li>
 
-            <li><button class="botonPerfil" data-info="<b id='neg'>DREAMS CELULARES.-SALTA.:</b> Reparación y Mantenimiento de Equipos y PCs
+            <li><button class="botonPerfil" data-info="<b id='neg'>DREAMS CELULARES.-SALTA.:</b> 
+                        <b id='neg'>Puesto:</b> Técnico en Reparación y Mantenimiento de Equipos Móviles y PCs
+                        <b id='neg'>Descripción del puesto:</b> Encargado de diagnosticar, reparar y mantener dispositivos móviles, computadoras y periféricos, asegurando su correcto funcionamiento. 
+                        Responsable de la instalación de sistemas operativos, software y drivers, así como de la recuperación y respaldo de datos. Atendía consultas técnicas, brindaba asesoramiento personalizado y gestionaba la calidad del servicio postventa.
+                        
+                        <p id='cur'>“Esta experiencia aportó una base sólida en el ámbito técnico, desarrollando habilidades en diagnóstico, mantenimiento y optimización de equipos informáticos. Favoreció una comprensión práctica del hardware y software, gestión de sistemas y resolución de incidencias, competencias esenciales para soporte IT. Además, fortaleció la capacidad analítica, el aprendizaje continuo y la orientación a soluciones eficientes dentro del entorno tecnológico.”</p>
+                        <hr>
 
-                        <b id='neg'>SUPERMERCADO DIA% Tienda 803 802 801 1803 1805 .-SALTA.:</b> Venta / Cajero / Repositor / Responsable de Turno
+                        <b id='neg'>SUPERMERCADO DIA% Tienda 803 802 801 1803 1805 .-SALTA.:</b>
+                        <b id='neg'>Puesto:</b> Encargado de Turno / Cajero / Repositor
+                        <b id='neg'>Descripción del puesto:</b> Responsable de la supervisión de operaciones diarias, gestión de personal, control de inventarios y cumplimiento de estándares de calidad y atención al cliente. Encargado del manejo de caja, reposición de productos y optimización de procesos de tienda mediante herramientas digitales internas.
+                        
+                        <p id='cur'>“Los 12 años de experiencia en diferentes roles consolidaron habilidades de gestión, liderazgo y trabajo en equipo, altamente aplicables a entornos tecnológicos colaborativos. La supervisión de procesos, control de calidad y manejo de información fortalecieron la organización y la precisión, competencias clave en soporte técnico y desarrollo de proyectos IT. También se reforzó la comunicación efectiva y la adaptabilidad a nuevos sistemas y herramientas digitales.”</p>
+                        <hr>
 
-                        <b id='neg'>LA ESPAÑOLA SRL Fabrica snacks.-SALTA.:</b> Asesor en ventas orientado a minorista y mayorista: Preventa - Identificación de Oportunidades de Negocios - Cobranza - Generación de Demanda - Brindar Asistencia"
-                        data-img="./static/img/referencia.png"><span class="material-symbols-outlined">work</span>Referencias Laborales</button></li>
+                        <b id='neg'>LA ESPAÑOLA SRL Fabrica snacks.-SALTA.:</b>
+                        <b id='neg'>Puesto:</b> Asesor Comercial Minorista y Mayorista
+                        <b id='neg'>Descripción del puesto:</b> Responsable de la atención y asesoramiento a clientes, gestión de preventa, cobranza y generación de oportunidades de negocio. Utilizaba herramientas tecnológicas para el seguimiento de ventas, análisis de resultados y mantenimiento de relaciones comerciales.
+                        
+                        <p id='cur'>“Este rol impulsó la capacidad de análisis de datos comerciales, comunicación con clientes y uso de herramientas digitales para la gestión de ventas, todos aplicables al entorno IT. La experiencia en identificación de oportunidades y asistencia técnica al cliente fortaleció la empatía tecnológica y la orientación a la mejora continua. Desarrolló habilidades de negociación, pensamiento estratégico y soporte funcional, útiles en proyectos de desarrollo web y software.”</p>
+                        <br>"
+
+                        
+                        data-img="./static/img/referencia.png"><span class="material-symbols-outlined"></span>Referencias Laborales</button></li>
         </ul></div></div>
         <div id="imagen"><img id="fotoPerfil" src="./static/img/perfil.png" alt="imagen de perfil">
         <p id="nota" >« « Clic en cada titulo para ampliar » »</p></div>
         <div class="menu"><div class="menulista"><ul id="menuDos" >
 
-            <li><button class="botonPerfil" data-info="En esta etapa de mi vida he comprendido dos cosas importantes, la primera es que para triunfar en mi vida debo superarme cada día y la segunda es que para avanzar debo dar mi mejor esfuerzo en el trabajo, ya que esto hace parte importante de mi vida.
-            
-            Sé trabajar duro, soy eficaz resolviendo problemas, sé trabajar en equipo, trabajo bien bajo presión, soy bueno escuchando, soy entusiasta y predispuesto.
+            <li><button class="botonPerfil" data-info="En esta etapa de mi vida tengo plena convicción de que el crecimiento personal y profesional se construye a través de la superación constante, la disciplina y el compromiso con cada meta que uno se propone. Considero que el esfuerzo y la dedicación en el trabajo no solo son la base del éxito, sino también una forma de evolucionar y dejar una huella positiva en cada entorno donde me desempeño.
 
-            Tengo un gran potencial que ofrecer, solo necesito la oportunidad que se confié en mí y yo me encargare entregar más allá de mis límites para crecer. Sé que tengo mucho que aportar y mucho más por aprender 
-            Quiero tener la oportunidad de demostrar cuáles son mis capacidades"
+            Soy una persona responsable, perseverante y con una mentalidad orientada a resultados. Me caracterizo por mi capacidad para resolver problemas de manera eficiente, mantener la calma bajo presión y adaptarme con rapidez a nuevos desafíos. Disfruto del trabajo en equipo, valoro la comunicación efectiva y sé escuchar para encontrar soluciones que beneficien tanto al grupo como a la organización.
+
+            Cuento con un espíritu proactivo, entusiasmo por aprender y una actitud siempre dispuesta a asumir nuevos retos. Estoy convencido de que el verdadero crecimiento profesional se da cuando uno combina la pasión por lo que hace con la búsqueda constante de mejora. Tengo mucho para aportar desde mi experiencia y mi compromiso, y también mucho por aprender para seguir avanzando.
+
+            Busco una oportunidad que me permita demostrar mi capacidad, aportar ideas, fortalecer mis conocimientos y contribuir activamente al desarrollo de los objetivos de la empresa. Confío en que, con esfuerzo y dedicación, puedo superar las expectativas y convertirme en un recurso valioso dentro del equipo."
             data-img="./static/img/sobreMi.png"><img src="./static/img/person_text.png" alt=".">Sobre Mi</button></li>
 
             <li><hr></li>
@@ -121,7 +138,7 @@
                                 <div class='skill'><img src='./static/img/servidor-sql.png' alt='SQL'> <b>SQL</b></div>
                             </div>
                             <p class='habilidad'>Habilidades Blandas</p>"
-            data-img="./static/img/habilidades.png"><img src="./static/img/person_play.png." alt="">Habilidades</button></li>
+            data-img="./static/img/habilidades.png"><img src="./static/img/person_play.png" alt="">Habilidades</button></li>
         </ul></div></div>
     </section>
 </div>
@@ -131,7 +148,7 @@
         <button id="hideBtn"><span class="material-symbols-outlined">close</span></button>
         <br><br>
         <div id="contTitulo">
-        <img id="infoImg" alt="" /><p id="infoTitle"></p>
+        <img id="infoImg" alt="" src="./static/img/errorimagen.png"><p id="infoTitle"></p>
         </div>
         <br>
         <div id="infoText"></div>

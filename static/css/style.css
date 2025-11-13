@@ -132,7 +132,12 @@ main {
 
 
 #neg {
-  font-weight: bold;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#cur{
+  font-style: italic;
   text-decoration: none;
 }
 
@@ -233,7 +238,7 @@ hr {
 }
 
 #infoImg {
-  width: 50px;
+  width: 100px;
 }
 
 #infoTitle {
