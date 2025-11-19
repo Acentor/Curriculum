@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoText = document.getElementById('infoText');
     const infoTitle = document.getElementById('infoTitle');
     const infoImg = document.getElementById('infoImg');
-    const hideBtn = document.getElementById('hideBtn');
     const contTitulo = document.getElementById('contTitulo');
 
     if (infoImg) {
@@ -341,22 +340,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    if (hideBtn) {
-        hideBtn.addEventListener('click', () => {
-            if (infoBox) infoBox.style.display = 'none';
-            limpiarSelecciones();
-            updateURL(null);
-            restaurarInfoBox();
+document.querySelectorAll('.hideBtn').forEach(hideBtn => {
+    hideBtn.addEventListener('click', () => {
 
-            const tarjeta = document.getElementById('tarjeta');
-            if (tarjeta) {
-                const y = tarjeta.getBoundingClientRect().top + window.scrollY;
-                smoothScrollTo(y, 1200);
-                tarjeta.focus();
-            }
-        });
-    }
+        if (infoBox) infoBox.style.display = 'none';
+        limpiarSelecciones();
+        updateURL(null);
+        restaurarInfoBox();
 
+        const tarjeta = document.getElementById('tarjeta');
+        if (tarjeta) {
+            const y = tarjeta.getBoundingClientRect().top + window.scrollY;
+            smoothScrollTo(y, 1200);
+            tarjeta.focus();
+        }
+
+    });
+});
     const fuenteSelect = document.getElementById('fuente-select');
     const cuerpo = document.body;
 

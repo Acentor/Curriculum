@@ -99,6 +99,14 @@ header h1 {
   margin-bottom: 1px;
 }
 
+header h1 img {
+  vertical-align: middle;
+  width: 80px;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.25);
+}
+
+
 header h3 {
   margin-top: 1px;
   color: whitesmoke;
@@ -166,7 +174,7 @@ main {
 .botonPerfil {
   display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
+  background: linear-gradient(103deg, var(--green-blue) 0%, var(--red-purple) 15%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
               linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
@@ -183,7 +191,7 @@ main {
 }
 
 .botonPerfil:hover {
-  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
+  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 50%, var(--green-blue) 80%) padding-box,
               linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
@@ -567,9 +575,9 @@ text-align: center;
 }
 
 input[type="submit"] {
-  display: inline-block;
+ display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, var(--green-blue) 5%, var(--red-purple) 45%, var(--red-purple2) 80%, var(--blue-dark) 100% ) padding-box,
+  background: linear-gradient(103deg, var(--green-blue) 0%, var(--red-purple) 15%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
               linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
@@ -581,10 +589,12 @@ input[type="submit"] {
   margin-bottom: 10px;
   font-weight: bold;
   transition: transform 0.5s ease;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 input[type="submit"]:hover {
-  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple2) 10%, var(--red-purple) 40%, var(--green-blue) 80%) padding-box,
+  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 50%, var(--green-blue) 80%) padding-box,
               linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
@@ -783,6 +793,10 @@ body.inverso .amenu {
     
     h1 {
         font-size: 3vw;
+    }
+
+    header h1 img {
+        width: 60px;
     }
     
     header h1 {
