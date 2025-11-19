@@ -348,11 +348,11 @@ document.querySelectorAll('.hideBtn').forEach(hideBtn => {
         updateURL(null);
         restaurarInfoBox();
 
-        const tarjeta = document.getElementById('tarjeta');
-        if (tarjeta) {
-            const y = tarjeta.getBoundingClientRect().top + window.scrollY;
+        const subir = document.getElementById('subir');
+        if (subir) {
+            const y = subir.getBoundingClientRect().top + window.scrollY;
             smoothScrollTo(y, 1200);
-            tarjeta.focus();
+            subir.focus();
         }
 
     });
