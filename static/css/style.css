@@ -1,19 +1,19 @@
 :root {
---slate-blue: #706DC4ff;
---eminence: #7F2A8Cff;
+--azulviolaceo: #706DC4ff;
+--purpurafuerte: #7F2A8Cff;
 --licorice: #0D0713ff;
---raisin-black: #100B1Cff;
---space-cadet-2: #b9c3ff;
---dark-purple: #21112Dff;
+--negroviolaceo: #100B1Cff;
+--lavandapastel: #b9c3ff;
+--violetamuyoscuro: #21112Dff;
 --negro: black;
 --blanco: whitesmoke;
 --oscuro: #0d0713cc;
---delft-blue: #293672ff;
---green-blue: #484498;
---red-purple: #69a4fe;
---red-purple2: #f712a1;
---blue-dark: #a80d6d;
---red-purple3: #f712a1;
+--azulmarino: #293672ff;
+--grisviolaceo: #484498;
+--celeste: #69a4fe;
+--rosaintenso1: #f712a1;
+--magentaoscuro: #a80d6d;
+--rosaintenso2: #f712a1;
 --resaltador: #00000000 ;
 }
 
@@ -85,16 +85,16 @@ body strong {
 
 header {
     background-color: var(--oscuro);
-    color: var(--slate-blue);
+    color: var(--azulviolaceo);
     padding: 0px 5px 0px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: var(--eminence) 3px solid;
+    border-bottom: var(--purpurafuerte) 3px solid;
 }
 
 header h1 {
-  text-shadow: 1px 1px var(--space-cadet-2);
+  text-shadow: 1px 1px var(--lavandapastel);
   font-size: 3em;
   margin-bottom: 1px;
 }
@@ -115,7 +115,7 @@ header h3 {
 
 a:focus,
 button:focus, input:focus , textarea:focus {
-    outline: 5px solid var(--space-cadet-2);
+    outline: 5px solid var(--lavandapastel);
     outline-offset: 2px;
     border-radius: 3px;
 }
@@ -127,7 +127,7 @@ main {
 
 .profile-section {
   padding: 10px;
-  border: 2px solid var(--dark-purple);
+  border: 2px solid var(--violetamuyoscuro);
   border-radius: 10px 10px 0px 0px;
   display: flex;
   flex-direction: row;
@@ -174,8 +174,8 @@ main {
 .botonPerfil {
   display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, var(--green-blue) 0%, var(--red-purple) 15%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
-              linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
+  background: linear-gradient(103deg, var(--grisviolaceo) 0%, var(--celeste) 15%, var(--rosaintenso2) 80%, var(--magentaoscuro) 100% ) padding-box,
+              linear-gradient(200deg, var(--negro) 20%, var(--azulmarino) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
   text-align: center;
@@ -191,8 +191,8 @@ main {
 }
 
 .botonPerfil:hover {
-  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 50%, var(--green-blue) 80%) padding-box,
-              linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
+  background: linear-gradient(283deg, var(--magentaoscuro) 0%, var(--rosaintenso2) 10%, var(--celeste) 50%, var(--grisviolaceo) 80%) padding-box,
+              linear-gradient(200deg, var(--grisviolaceo) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
 
@@ -205,7 +205,7 @@ main {
 }
 
 hr {
-  background-color: var(--dark-purple);
+  background-color: var(--violetamuyoscuro);
   height: 3px;
   border: none;
   margin-top: 20px;
@@ -214,7 +214,7 @@ hr {
 
 #nota {
   font-size: 0.7rem;
-  color: var(--slate-blue);
+  color: var(--azulviolaceo);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -304,7 +304,7 @@ hr {
   margin-top: 20px;
   display: none;
   background-color: whitesmoke;
-  border: 3px solid var(--raisin-black);
+  border: 3px solid var(--negroviolaceo);
   padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0px 0px 8px 8px;
@@ -315,7 +315,7 @@ hr {
   color: black;
   margin-top: 1rem;
   padding: .4rem .8rem;
-  border-color: var(--slate-blue);
+  border-color: var(--azulviolaceo);
   border-radius: 5px;
 }
 
@@ -345,7 +345,7 @@ hr {
 
 .skill {
   border-radius: 50%;
-  border: 3px solid var(--slate-blue);
+  border: 3px solid var(--azulviolaceo);
   width: 10vw;
   height: 10vw;
   min-width: 150px;
@@ -366,7 +366,7 @@ hr {
 
 #descargacv a {
   text-decoration: none;
-  color: var(--space-cadet-2);
+  color: var(--lavandapastel);
   font-weight: bold;
   padding: 10px;
 }
@@ -386,14 +386,14 @@ hr {
 
 footer {
   background-color: var(--licorice);
-  color: var(--eminence);
+  color: var(--purpurafuerte);
   text-align: center;
   padding: 10px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: var(--eminence) 3px solid;
+  border-top: var(--purpurafuerte) 3px solid;
 }
 
 footer img {
@@ -419,7 +419,7 @@ footer a {
 .tarjeta1 {
   width: 300px;
   height: 420px;
-  background: linear-gradient(135deg, var(--blue-dark)35%, var(--red-purple));
+  background: linear-gradient(135deg, var(--magentaoscuro)35%, var(--celeste));
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 10px 24px rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   display: flex;
@@ -438,7 +438,7 @@ footer a {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  border: 3px solid var(--red-purple);
+  border: 3px solid var(--celeste);
   width: 280px;
   height: 340px;
   overflow-y: auto;
@@ -464,7 +464,7 @@ footer a {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  border: 3px solid var(--red-purple);
+  border: 3px solid var(--celeste);
   width: 280px;
   height: 190px;
   margin-bottom: 8px;
@@ -487,22 +487,22 @@ footer a {
 .title {
   font-size: 1.5em;
   font-weight: bold;
-  color: var(--eminence);
+  color: var(--purpurafuerte);
   background-color: whitesmoke;
   width: 280px;
   border-radius: 10px;
-  border: 3px solid var(--red-purple);
+  border: 3px solid var(--celeste);
   margin-bottom: 10px;
 }
 
 .seleccion {
-  color: var(--red-purple2);
+  color: var(--rosaintenso1);
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   padding: 8px;
   border-radius: 3px;
-  background-color: var(--dark-purple);
+  background-color: var(--violetamuyoscuro);
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -512,13 +512,13 @@ footer a {
 }
 
 .select {
-  color: var(--red-purple2);
+  color: var(--rosaintenso1);
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   padding: 8px;
   border-radius: 3px;
-  background-color: var(--dark-purple);
+  background-color: var(--violetamuyoscuro);
   padding-left: 20px;
   padding-right: 20px;
   border: #000000 2.5px solid;
@@ -559,7 +559,7 @@ text-align: center;
 .campos label {
   font-size: 18px;
   font-weight: bold;
-  color: var(--space-cadet-2);
+  color: var(--lavandapastel);
 }
 
 .campos input , textarea {
@@ -567,7 +567,7 @@ text-align: center;
   max-width: 600px;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid var(--dark-purple);
+  border: 1px solid var(--violetamuyoscuro);
   border-radius: 5px;
   font-size: 16px;
   box-sizing: border-box;
@@ -578,8 +578,8 @@ text-align: center;
 input[type="submit"] {
  display: inline-block;
   border: 1px solid transparent;
-  background: linear-gradient(103deg, var(--green-blue) 0%, var(--red-purple) 15%, var(--red-purple3) 80%, var(--blue-dark) 100% ) padding-box,
-              linear-gradient(200deg, var(--negro) 20%, var(--delft-blue) 100%) border-box;
+  background: linear-gradient(103deg, var(--grisviolaceo) 0%, var(--celeste) 15%, var(--rosaintenso2) 80%, var(--magentaoscuro) 100% ) padding-box,
+              linear-gradient(200deg, var(--negro) 20%, var(--azulmarino) 100%) border-box;
   border-radius: 1em;
   padding: 10px 30px;
   text-align: center;
@@ -595,8 +595,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: linear-gradient(283deg, var(--blue-dark) 0%, var(--red-purple3) 10%, var(--red-purple) 50%, var(--green-blue) 80%) padding-box,
-              linear-gradient(200deg, var(--green-blue) 20%, var(--blanco) 100%) border-box;
+  background: linear-gradient(283deg, var(--magentaoscuro) 0%, var(--rosaintenso2) 10%, var(--celeste) 50%, var(--grisviolaceo) 80%) padding-box,
+              linear-gradient(200deg, var(--grisviolaceo) 20%, var(--blanco) 100%) border-box;
   transform:scale(0.9)
 }
 
@@ -706,9 +706,9 @@ body.fuente-alternativa .tarjeta1 {
 }
 
 #modoInversoBtn {
-  background-color: var(--dark-purple);
+  background-color: var(--violetamuyoscuro);
   color: var(--blanco);
-  border: 2px solid var(--slate-blue);
+  border: 2px solid var(--azulviolaceo);
   padding: 8px 15px;
   border-radius: 8px;
   cursor: pointer;

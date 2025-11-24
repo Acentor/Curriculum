@@ -401,20 +401,20 @@ document.querySelectorAll('.hideBtn').forEach(hideBtn => {
     let modoInverso = false;
 
     const coloresOriginales = {
-        '--slate-blue': getComputedStyle(root).getPropertyValue('--slate-blue'),
-        '--eminence': getComputedStyle(root).getPropertyValue('--eminence'),
+        '--azulviolaceo': getComputedStyle(root).getPropertyValue('--azulviolaceo'),
+        '--purpurafuerte': getComputedStyle(root).getPropertyValue('--purpurafuerte'),
         '--licorice': getComputedStyle(root).getPropertyValue('--licorice'),
-        '--raisin-black': getComputedStyle(root).getPropertyValue('--raisin-black'),
-        '--space-cadet-2': getComputedStyle(root).getPropertyValue('--space-cadet-2'),
-        '--delft-blue': getComputedStyle(root).getPropertyValue('--delft-blue'),
-        '--dark-purple': getComputedStyle(root).getPropertyValue('--dark-purple'),
-        '--green-blue': getComputedStyle(root).getPropertyValue('--green-blue'),
-        '--red-purple': getComputedStyle(root).getPropertyValue('--red-purple'),
-        '--red-purple2': getComputedStyle(root).getPropertyValue('--red-purple2'),
-        '--blue-dark': getComputedStyle(root).getPropertyValue('--blue-dark'),
+        '--negroviolaceo': getComputedStyle(root).getPropertyValue('--negroviolaceo'),
+        '--lavandapastel': getComputedStyle(root).getPropertyValue('--lavandapastel'),
+        '--azulmarino': getComputedStyle(root).getPropertyValue('--azulmarino'),
+        '--violetamuyoscuro': getComputedStyle(root).getPropertyValue('--violetamuyoscuro'),
+        '--grisviolaceo': getComputedStyle(root).getPropertyValue('--grisviolaceo'),
+        '--celeste': getComputedStyle(root).getPropertyValue('--celeste'),
+        '--rosaintenso1': getComputedStyle(root).getPropertyValue('--rosaintenso1'),
+        '--magentaoscuro': getComputedStyle(root).getPropertyValue('--magentaoscuro'),
         '--negro': getComputedStyle(root).getPropertyValue('--negro'),
         '--blanco': getComputedStyle(root).getPropertyValue('--blanco'),
-        '--red-purple3': getComputedStyle(root).getPropertyValue('--red-purple3'),
+        '--rosaintenso2': getComputedStyle(root).getPropertyValue('--rosaintenso2'),
         '--oscuro': getComputedStyle(root).getPropertyValue('--oscuro'),
         '--resaltador': getComputedStyle(root).getPropertyValue('--resaltador')
     };
@@ -422,27 +422,24 @@ document.querySelectorAll('.hideBtn').forEach(hideBtn => {
     if (btnModoInverso) {
         btnModoInverso.addEventListener('click', () => {
             modoInverso = !modoInverso;
-
-            // ✅ Activar/desactivar clase en <body>
             document.body.classList.toggle('inverso', modoInverso);
 
             if (modoInverso) {
-                // Cambiar colores a tonos claros/invertidos
-                root.style.setProperty('--slate-blue', '#bacaf5');
-                root.style.setProperty('--eminence', '#172a2e');
+                root.style.setProperty('--azulviolaceo', '#bacaf5');
+                root.style.setProperty('--purpurafuerte', '#172a2e');
                 root.style.setProperty('--licorice', '#c5f4fd');
-                root.style.setProperty('--raisin-black', '#d097ee');
-                root.style.setProperty('--space-cadet-2', '#81c3f5');
-                root.style.setProperty('--dark-purple', '#ef88ec');
+                root.style.setProperty('--negroviolaceo', '#d097ee');
+                root.style.setProperty('--lavandapastel', '#81c3f5');
+                root.style.setProperty('--violetamuyoscuro', '#ef88ec');
                 root.style.setProperty('--negro', 'whitesmoke');
                 root.style.setProperty('--blanco', 'black');
                 root.style.setProperty('--oscuro', '#3a6972');
-                root.style.setProperty('--delft-blue', '#d1f6fe');
-                root.style.setProperty('--green-blue', '#baf1fd');
-                root.style.setProperty('--red-purple', '#d097ee');
-                root.style.setProperty('--red-purple2', '#172a2e');
-                root.style.setProperty('--red-purple3', '#ea6ae7');
-                root.style.setProperty('--blue-dark', '#81c3f5');
+                root.style.setProperty('--azulmarino', '#d1f6fe');
+                root.style.setProperty('--grisviolaceo', '#baf1fd');
+                root.style.setProperty('--celeste', '#d097ee');
+                root.style.setProperty('--rosaintenso1', '#172a2e');
+                root.style.setProperty('--rosaintenso2', '#ea6ae7');
+                root.style.setProperty('--magentaoscuro', '#81c3f5');
                 root.style.setProperty('--resaltador', '#00000070');
             } else {
                 Object.entries(coloresOriginales).forEach(([variable, valor]) => {
