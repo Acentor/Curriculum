@@ -448,4 +448,21 @@ document.querySelectorAll('.hideBtn').forEach(hideBtn => {
             }
         });
     }
+document.querySelectorAll(".tarjeta4").forEach(container => {
+  
+  const trigger = container.querySelector(".disparador");
+  const safeElements = container.querySelectorAll(".seguro");
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    container.classList.toggle("active");
+  });
+
+  safeElements.forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
+
+})
 });
