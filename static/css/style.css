@@ -840,10 +840,6 @@ body.inverso .amenu {
 }
 
 
-.tarjeta4 span {
-  margin-top: 50px;
-}
-
 .tarjeta4 {
   width: 420px;
   height: 450px;
@@ -856,7 +852,6 @@ body.inverso .amenu {
   text-align: center;
   align-items: center;
   color: black;
-  padding: 10px;
   perspective: 1000px;
 }
 
@@ -877,18 +872,19 @@ body.inverso .amenu {
   background: whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; 
   align-items: center;
   border-radius: 10px;
   border: 3px solid var(--celeste);
-  width: 370px;
-  height: 370px;
-  overflow-y: auto;
+  width: 375px;
+  height: 100%;
+  overflow-y: auto; 
   font-family: inherit;
   font-size: inherit;
-
   position: absolute;
   backface-visibility: hidden;
+  box-sizing: border-box;
+  padding-top: 20px;
 }
 
 .tarjeta-detras {
@@ -898,8 +894,8 @@ body.inverso .amenu {
 
 .disparador {
   position: absolute;
-  top: -20px;
-  right: 10px;
+  top: -40px;
+  right: 5px;
   background: var(--azulviolaceo);
   color: var(--blanco);
   padding: 6px 10px;
@@ -908,6 +904,60 @@ body.inverso .amenu {
   z-index: 10;
 }
 
+.tarjeta5 img {
+  width: 350px;
+  height: auto;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-contenido iframe,
+.modal-contenido video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 @media (max-width: 1000px) {
 

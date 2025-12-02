@@ -465,4 +465,48 @@ document.querySelectorAll(".tarjeta4").forEach(container => {
   });
 
 })
+
+
+var botonesAbrir = document.querySelectorAll(".abrir-video-btn");
+
+botonesAbrir.forEach(function(btn) {
+    btn.onclick = function() {
+        var targetId = this.getAttribute('data-target');
+        var modal = document.getElementById(targetId);
+
+        if (modal) {
+            modal.style.display = "flex";
+        }
+    }
+});
+
+window.cerrarModal = function(elemento) {
+    var modal = elemento.closest('.modal') || elemento;
+
+    if (modal) {
+        modal.style.display = "none";
+
+        var videoElemento = modal.querySelector('video');
+        if (videoElemento) {
+            videoElemento.pause();
+            videoElemento.currentTime = 0;
+        }
+
+        var iframeElemento = modal.querySelector('iframe');
+        if (iframeElemento) {
+            var url = iframeElemento.getAttribute('src');
+            iframeElemento.setAttribute('src', '');
+            iframeElemento.setAttribute('src', url);
+        }
+        
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        window.cerrarModal(event.target);
+    }
+}
+
+
 });

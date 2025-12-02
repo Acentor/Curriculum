@@ -103,20 +103,26 @@
 
                         <div class="tarjeta5">
                             <div class="tarjeta-frente">
-                                <span>CAC - Codo a Codo
+                                <span>HALLCROSS
 
-                                    Codo a codo propuesta que llevan a cabo de manera conjunta el Ministerio de Educación y el Ministerio de Modernización de la Ciudad de Buenos Aires.
+                                    Proyecto CAC realizado en Python / Flask
                                     <br>
-                                    Frontend, Backend, Bases de Datos, Git y GitHub, Metodologías Ágiles, Habilidades Blandas, Python.
+                                    CRUD para la gestión de eventos en la pagina web de un Gimnasio.
                                 </span>
-                                <img src="../static/img/codoacodo.png" alt="CAC">
+                                <hr>
+                                <br>
+                                <img src="../static/img/Proyectos/cambiar.png" alt="captura-hallcross">
                             </div>
 
                             <div class="tarjeta-detras">
-                            <h2>Información extra</h2>
-                            <p>Esto aparece cuando gira.</p>
+                                <button class="seleccion abrir-video-btn seguro" data-target="modalVideo1">Video Descripción</button> 
+                                <br>
+                                <button class="seleccion abrir-video-btn seguro" data-target="modalVideo2">Diagrama Entidad Relación</button>
+                                <br>
+                                <button class="seleccion abrir-video-btn seguro" data-target="modalVideo3">Video Demostración</button>
+                                <br>
+                                <a class="seleccion seguro" href="#" target="_blank">Codigo</a>
 
-                            <button class="seguro">Botón del reverso</button>
                             </div>
                         </div>
 
@@ -131,10 +137,9 @@
 
                         <div class="tarjeta5">
                             <div class="tarjeta-frente">
-                                <span>CAC - Codo a Codo
-
+                                <span><br>
+                                    CAC - Codo a Codo
                                     Codo a codo propuesta que llevan a cabo de manera conjunta el Ministerio de Educación y el Ministerio de Modernización de la Ciudad de Buenos Aires.
-                                    <br>
                                     Frontend, Backend, Bases de Datos, Git y GitHub, Metodologías Ágiles, Habilidades Blandas, Python.
                                 </span>
                                 <img src="../static/img/codoacodo.png" alt="CAC">
@@ -256,7 +261,30 @@
             <span class="texto">Arriba</span>
         </a>
         </div>
-        
+        <div>
+                                
+            <div id="modalVideo1" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarModal(this)">&times;</span>
+                    <video controls src="./Back-End Python2 (online-video-cutter.com).mp4" width="560"></video>
+                </div>
+            </div>
+
+            <div id="modalVideo2" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarModal(this)">&times;</span>
+                    <img src="../static/img/formacion.png" style="width:100%" alt="">
+                </div>
+            </div>
+
+            <div id="modalVideo3" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarModal(this)">&times;</span>
+                    <video controls src="./Back-End Python2 (online-video-cutter.com).mp4" width="560"></video>
+                </div>
+            </div> 
+
+        </div>
     </main>
     <footer>
         <p>&copy; Juan Antonio Artigas.</p>
