@@ -778,7 +778,7 @@ body.inverso .amenu {
   background-size: cover;
   font-weight: bold;
   padding: 15px 25px 15px 25px;
-  border: 2px solid black;
+  border: 2px solid var(--negroviolaceo);
   border-radius: 5px;
   transition: transform 0.5s ease;
   display: inline-block;
@@ -959,6 +959,48 @@ body.inverso .amenu {
     display: block;
 }
 
+.contenedor {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+}
+
+.caja-uno {
+  background-color: var(--blanco);
+  top: 40px;
+  left: 10px;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 2px solid black;
+}
+
+.caja-dos {
+  background-color: var(--blanco);
+  top: 50px;
+  left: 50px;
+  z-index: 3;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 2px solid black;
+}
+
+.caja-tres {
+  background-color: var(--blanco);
+  top: 60px;
+  left: 90px;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 2px solid black;
+}
+
 @media (max-width: 1000px) {
 
   
@@ -1078,5 +1120,4 @@ body.inverso .amenu {
   }
 
 }
-
 
