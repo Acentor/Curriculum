@@ -418,7 +418,7 @@ footer a {
 
 .tarjeta1 {
   width: 300px;
-  height: 420px;
+  height: 500px;
   background: linear-gradient(135deg, var(--magentaoscuro)35%, var(--celeste));
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 10px 24px rgba(0, 0, 0, 0.19);
   border-radius: 10px;
@@ -440,7 +440,7 @@ footer a {
   border-radius: 10px;
   border: 3px solid var(--celeste);
   width: 280px;
-  height: 340px;
+  height: 420px;
   overflow-y: auto;
   font-family: inherit;
   font-size: inherit;
@@ -1117,6 +1117,9 @@ body.inverso .amenu {
   }
   #menuLinks2 {
     flex-wrap: wrap;
+  }
+  .tarjeta5 img {
+  width: 260px;
   }
 
 }
